@@ -1,0 +1,99 @@
+mql5
+//+------------------------------------------------------------------+
+//|                                                   Promex MT5     |
+//|                                      Developed by Forex Robot Easy Team  |
+//|                                           forexroboteasy.com   |
+//+------------------------------------------------------------------+
+#property copyright 'Forex Robot Easy Team'
+#property link      'forexroboteasy.com'
+
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+{
+    // Initialize necessary variables and settings
+    return INIT_SUCCEEDED;
+}
+
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+{
+    // Perform any necessary clean up before terminating the Expert Advisor
+}
+
+//+------------------------------------------------------------------+
+//| Expert start function                                            |
+//+------------------------------------------------------------------+
+void OnTick()
+{
+    // Perform market analysis and identify high-probability trading opportunities
+    double deviation = CalculatePriceDeviation();
+    double normalValue = CalculateNormalValue();
+    double probability = CalculateSuccessProbability(deviation, normalValue);
+
+    if (probability >= 0.95)
+    {
+        OpenTrade();
+        SetTrailingStop();
+    }
+}
+
+//+------------------------------------------------------------------+
+//| Calculate price deviation                                        |
+//+------------------------------------------------------------------+
+double CalculatePriceDeviation()
+{
+    // Calculate the price deviation from its normal value
+    double deviation = 0.0;
+
+    // ... code to calculate the deviation ...
+
+    return deviation;
+}
+
+//+------------------------------------------------------------------+
+//| Calculate normal value                                           |
+//+------------------------------------------------------------------+
+double CalculateNormalValue()
+{
+    // Calculate the normal value of the price
+    double normalValue = 0.0;
+
+    // ... code to calculate the normal value ...
+
+    return normalValue;
+}
+
+//+------------------------------------------------------------------+
+//| Calculate success probability                                    |
+//+------------------------------------------------------------------+
+double CalculateSuccessProbability(const double deviation, const double normalValue)
+{
+    // Calculate the success probability based on the price deviation and normal value
+    double probability = 0.0;
+
+    // ... code to calculate the probability ...
+
+    return probability;
+}
+
+//+------------------------------------------------------------------+
+//| Open trade                                                       |
+//+------------------------------------------------------------------+
+void OpenTrade()
+{
+    // Open a trade based on the identified high-probability trading opportunity
+    // ... code to open the trade ...
+}
+
+//+------------------------------------------------------------------+
+//| Set trailing stop                                                |
+//+------------------------------------------------------------------+
+void SetTrailingStop()
+{
+    // Set a trailing stop to accumulate a small profit from the market
+    // ... code to set the trailing stop ...
+}
